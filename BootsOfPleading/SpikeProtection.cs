@@ -65,9 +65,11 @@ namespace BootsOfPleading
                 Protection = ProtectionStatus.IFrames;
                 currentProtectionTime = PROTECTION_TIME;
 
+                float damage = Core.Logic.Penitent.Stats.Life.Current - 1;
+                if (damage < 1) damage = 1;
                 Hit spikeHit = new Hit()
                 {
-                    DamageAmount = Core.Logic.Penitent.Stats.Life.Current - 1,
+                    DamageAmount = damage,
                     DamageType = DamageArea.DamageType.Normal,
                     DamageElement = DamageArea.DamageElement.Contact,
                     AttackingEntity = Core.Logic.Penitent.gameObject
