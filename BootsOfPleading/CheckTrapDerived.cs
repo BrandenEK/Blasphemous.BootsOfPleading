@@ -9,7 +9,6 @@ namespace BootsOfPleading
 		{
 			if (other.gameObject.CompareTag("SpikeTrap"))
 			{
-				Main.SpikeProtection.Log("On trigger exit");
 				Main.SpikeProtection.LeftSpikes();
 			}
 		}

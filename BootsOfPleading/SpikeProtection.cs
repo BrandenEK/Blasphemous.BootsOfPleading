@@ -57,7 +57,7 @@ namespace BootsOfPleading
             Object.FindObjectOfType<PlayerPurgePoints>().text.text = Protection.ToString();
         }
 
-        public void InSpikes()
+        public bool InSpikes()
         {
             if (Protection == ProtectionStatus.Protected)
             {
@@ -66,7 +66,9 @@ namespace BootsOfPleading
                 currentProtectionTime = PROTECTION_TIME;
 
                 float damage = Core.Logic.Penitent.Stats.Life.Current - 1;
-                if (damage < 1) damage = 1;
+                if (damage < 1)
+                    return true;
+
                 Hit spikeHit = new Hit()
                 {
                     DamageAmount = damage,
@@ -76,6 +78,7 @@ namespace BootsOfPleading
                 };
                 Core.Logic.Penitent.Damage(spikeHit);
             }
+            return false;
         }
 
         public void LeftSpikes()

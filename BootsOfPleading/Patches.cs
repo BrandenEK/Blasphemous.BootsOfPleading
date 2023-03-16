@@ -17,8 +17,7 @@ namespace BootsOfPleading
             }
             else
             {
-                Main.SpikeProtection.InSpikes();
-                return false;
+                return Main.SpikeProtection.InSpikes();
             }
         }
     }
@@ -49,12 +48,12 @@ namespace BootsOfPleading
             CheckTrap trapChecker = __instance.GetComponentInChildren<CheckTrap>();
             GameObject holder = trapChecker.gameObject;
             Object.Destroy(trapChecker);
-            holder.AddComponent<CheckTrapDerived>();
-        }
 
-        public static void Postfix(Penitent __instance)
-        {
-            Main.SpikeProtection.LogWarning(__instance.GetComponentInChildren<CheckTrap>().GetType().Name);
+            BoxCollider2D collider = holder.GetComponent<BoxCollider2D>();
+            collider.size = new Vector2(collider.size.x, collider.size.y + 0.6f);
+            collider.offset = new Vector2(collider.offset.x, collider.offset.y + 0.3f);
+
+            holder.AddComponent<CheckTrapDerived>();
         }
     }
 }
