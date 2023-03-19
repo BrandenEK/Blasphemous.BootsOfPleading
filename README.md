@@ -1,9 +1,19 @@
-# Blasphemous-Boots-of-Pleading
+# Boots of Pleading Relic
 
 ## Table of Contents
 
+- [Relic Details](https://github.com/BrandenEK/Blasphemous-Boots-of-Pleading#relic-details)
 - [Installation](https://github.com/BrandenEK/Blasphemous-Boots-of-Pleading#installation)
 - [Translations](https://github.com/BrandenEK/Blasphemous-Boots-of-Pleading#translations)
+
+---
+
+## Relic Details
+
+- A new relic, the "Boots of Pleading", will be added to your inventory when starting a new game
+- When this item is equipped, falling into spikes will not instantly kill you, but will leave you at 1 hp
+- After falling in, you will have a few seconds to get out of the spikes before being killed for real
+- All credit for this mod goes to the original creator Kein.  This is simply an updated version of their mod
 
 ---
 
@@ -11,8 +21,8 @@
 
 1. Download the latest release of the Modding API from https://github.com/BrandenEK/Blasphemous-Modding-API/releases
 2. Follow the instructions there on how to install the api
-3. Download the latest release of the Randomizer from the [Releases](https://github.com/BrandenEK/Blasphemous-Randomizer/releases) page
-4. Extract the contents of the BlasphemousRandomizer.zip file into the "Modding" folder
+3. Download the latest release of the mod from the [Releases](https://github.com/BrandenEK/Blasphemous-Boots-of-Pleading/releases) page
+4. Extract the contents of the BootsOfPleading.zip file into the "Modding" folder
 
 ---
 
