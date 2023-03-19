@@ -4,16 +4,16 @@ itmdes: Old steel boots, covered in rust and dark splotches. This Miracle of les
 itmlor: High Judge Marcus was known for his temper. When pilgrim Cristobal dared to enter his chambers with foot bare and dirty, the punishment was swift. Every day poor Cristobal would have to fetch water for the monks of nearby church. Every day he would have to wear steel boots, lined with sharp spikes inside. Every noon he would empty the boots of his blood. At the end of each week he would come to the Judge's attendant, pleading for meeting of mercy. But little did pilgrim Cristobal know, the Judge forgot about his existence on the next day. And thus, for seven years, he would fetch the water, dry the boots and plead in tears. Until one day, the boots, removed, were dry. That day, the pleadings of St. Cristobal were heard.
 
 lang: es
-itmnam:
-itmdes:
-itmlor:
+itmnam: Botas de la Súplica
+itmdes: Unas viejas botas de acero herrumbrosas y manchadas. Este Milagro de origen poco conocido protege a Penitente de la inevitable muerte por pinchos.
+itmlor: El Juez Supremo Marcus era famoso por su mal genio. Cuando Cristóbal el peregrino osó entrar en sus aposentos con los pies descalzos y sucios el castigo fue inmediato. Cada día, el desafortunado Cristóbal tenía que recoger agua para los monjes de una iglesia cercana. Todos los días tenía que llevar unas botas de acero repletas de clavos afilados por dentro, y por las tardes vaciaba las botas llenas de sangre. Al terminar cada semana acudía al ujier del juez y le imploraba misericordia. Mas ignoraba por completo que el Juez se olvidó de su existencia al día siguiente. Y así, durante siete años estuvo recogiendo agua, secando las botas y suplicando entre lágrimas. Hasta que un día las botas estaban secas cuando se las quitó. Ese día las súplicas de San Cristóbal fueron oídas.
 
 lang: zh
-itmnam:
-itmdes:
-itmlor:
+itmnam: 恳求之靴
+itmdes: 被锈迹和污点覆盖的老旧铁靴。其上一种罕为人知的奇迹能保护忏悔者不蒙受尖刺带来的命定之死
+itmlor: 大裁判官马库斯的脾气人尽皆知。当朝圣者克里斯托巴拖着泥泞的赤足踏入他的厅堂时，对他的报复旋即而至。可怜的克里斯托巴每日都要为邻近教堂的修士挑水，而马库斯令他每日穿着这双内覆无数尖刺的铁靴。之后的每个中午，他都会倒出靴中的鲜血；每周末克里斯托巴都会造访大裁判官的厅堂，向他的侍从恳求与他面见，以求宽恕。可朝圣者有所不知，大裁判官在惩罚他的次日就忘记了此事。如此七年，克里斯托巴日复一日的挑水，倒血，恳求。直到一天，这靴子被脱下时，未有一滴鲜血从中倒出。正是那天，圣人克里斯托巴的恳求被听见了。
 
 lang: fr
-itmnam:
-itmdes:
-itmlor:
+itmnam: Bottes d'imploration
+itmdes: De vieilles bottes en acier, recouvertes de rouilles et de tâches sombres. Ce Miracle aux origines perdues protège le Pénitent de l'inevitable sentence des pics.
+itmlor: Le Haut Juge Marcus était connu pour son tempérament. Quand le pèlerin Cristobal souilla le sol de ses quartiers de ses sales nu-pieds, le châtiment fut immédiat. Chaque jour, Cristobal dû aller de l'eau pour les moines des monastères proches. Chaque jour il dût porter ces bottes en acier, couverte de pics tranchants à l'intérieur. Chaque soir, il lavait le sang qui remplissait ses bottes. A la fin de chaque semaine il allait voir l'intendant du Juge, implorant au plus bas la pitié de Marcus. Malheureusement pour Cristobal, le Juge avait oublié son existence dès le lendemain de leur première rencontre. Ainsi, durant sept années, il alla chercher de l'eau, il sécha ses bottes et implora en larmes. Jusqu'au jour où, en retirant les bottes. Elles étaient sèches. Ce jour-là, les lamentations de Saint Cristobal furent entendues.
