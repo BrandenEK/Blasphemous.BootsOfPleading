@@ -2,7 +2,6 @@
 using UnityEngine;
 using Framework.Managers;
 using Gameplay.GameControllers.Entities;
-using Gameplay.UI.Others.UIGameLogic;
 
 namespace BootsOfPleading
 {
@@ -43,7 +42,6 @@ namespace BootsOfPleading
                 if (currentProtectionTime <= 0)
                 {
                     Protection = ProtectionStatus.None;
-                    Log(("Iframes are over - No more protection"));
                 }
             }
             else if (Protection == ProtectionStatus.None && ProtectFromSpikes)
@@ -52,27 +50,25 @@ namespace BootsOfPleading
                 if (currentRegenTime <= 0)
                 {
                     Protection = ProtectionStatus.Protected;
-                    Log("Regen is over - Now protected");
                 }
             }
-            Object.FindObjectOfType<PlayerPurgePoints>().text.text = Protection.ToString();
         }
 
         public bool InSpikes()
         {
             if (Protection == ProtectionStatus.Protected)
             {
+                float currentHealth = Core.Logic.Penitent.Stats.Life.Current;
+                if (currentHealth <= 1)
+                    return true;
+
                 Log("Preventing spike death!");
                 Protection = ProtectionStatus.IFrames;
                 currentProtectionTime = PROTECTION_TIME;
 
-                float damage = Core.Logic.Penitent.Stats.Life.Current - 1;
-                if (damage < 1)
-                    return true;
-
                 Hit spikeHit = new Hit()
                 {
-                    DamageAmount = damage,
+                    DamageAmount = currentHealth - 1,
                     DamageType = DamageArea.DamageType.Normal,
                     DamageElement = DamageArea.DamageElement.Contact,
                     AttackingEntity = Core.Logic.Penitent.gameObject
@@ -84,7 +80,6 @@ namespace BootsOfPleading
 
         public void LeftSpikes()
         {
-            Log("Left spikes");
             Protection = ProtectionStatus.None;
             currentRegenTime = REGEN_TIME;
         }
