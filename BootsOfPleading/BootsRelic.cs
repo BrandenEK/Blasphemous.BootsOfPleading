@@ -13,13 +13,13 @@ namespace BootsOfPleading
 
         protected override string Lore => Main.SpikeProtection.Localize("itmlor");
 
-        protected override bool CarryOnStart => true;
-
         protected override bool PreserveInNGPlus => true;
 
         protected override bool AddToPercentCompletion => false;
 
         protected override bool AddInventorySlot => true;
+
+        protected override bool CarryOnStart => true;
 
         protected override void LoadImages(out Sprite picture)
         {
