@@ -60,7 +60,10 @@ namespace BootsOfPleading
             {
                 float currentHealth = Core.Logic.Penitent.Stats.Life.Current;
                 if (currentHealth <= 1)
+                {
+                    Protection = ProtectionStatus.None;
                     return true;
+                }
 
                 Log("Preventing spike death!");
                 Protection = ProtectionStatus.IFrames;
@@ -71,9 +74,13 @@ namespace BootsOfPleading
                     DamageAmount = currentHealth - 1,
                     DamageType = DamageArea.DamageType.Normal,
                     DamageElement = DamageArea.DamageElement.Contact,
-                    AttackingEntity = Core.Logic.Penitent.gameObject
+                    AttackingEntity = Core.Logic.Penitent.gameObject,
+                    Unblockable = true,
+                    Unparriable = true,
+                    Unnavoidable = true
                 };
                 Core.Logic.Penitent.Damage(spikeHit);
+                Core.Audio.PlaySfxOnCatalog("PenitentDeathBySpike");
             }
             return false;
         }
