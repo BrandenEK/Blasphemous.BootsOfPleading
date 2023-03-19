@@ -9,6 +9,7 @@ namespace BootsOfPleading
     public class SpikeProtection : Mod
     {
         public SpikeProtection(string modId, string modName, string modVersion) : base(modId, modName, modVersion) { }
+
         public enum ProtectionStatus { None, IFrames, Protected }
         private const float PROTECTION_TIME = 2f;
         private const float REGEN_TIME = 0.5f;

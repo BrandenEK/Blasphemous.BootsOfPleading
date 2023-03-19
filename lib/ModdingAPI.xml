@@ -210,14 +210,9 @@
             An abstract represention of an item effect
             </summary>
         </member>
-        <member name="M:ModdingAPI.Items.ModItemEffect.Awake">
+        <member name="M:ModdingAPI.Items.ModItemEffect.Initialize">
             <summary>
-            Called before startup
-            </summary>
-        </member>
-        <member name="M:ModdingAPI.Items.ModItemEffect.Start">
-            <summary>
-            Called after startup
+            Called when the item is created
             </summary>
         </member>
         <member name="M:ModdingAPI.Items.ModItemEffect.Update">
@@ -227,7 +222,7 @@
         </member>
         <member name="M:ModdingAPI.Items.ModItemEffect.Dispose">
             <summary>
-            Called when the item is disposed
+            Called when the item is destroyed
             </summary>
         </member>
         <member name="M:ModdingAPI.Items.ModItemEffect.ApplyEffect">
@@ -262,7 +257,7 @@
         </member>
         <member name="P:ModdingAPI.Items.ModItemEffectOnAbility.EffectTime">
             <summary>
-            How long this effect should last, or 0 for no time limit
+            How long this effect should last, or 0 for only ability duration
             </summary>
         </member>
         <member name="T:ModdingAPI.Items.ModItemEffectOnPrayerUse">
@@ -272,12 +267,7 @@
         </member>
         <member name="P:ModdingAPI.Items.ModItemEffectOnPrayerUse.EffectTime">
             <summary>
-            How long this effect should last, or 0 for no time limit
-            </summary>
-        </member>
-        <member name="P:ModdingAPI.Items.ModItemEffectOnPrayerUse.OnlyWhenPrayerActive">
-            <summary>
-            Whether or not this effect should only last while the prayer is active
+            How long the prayer should last
             </summary>
         </member>
         <member name="P:ModdingAPI.Items.ModItemEffectOnPrayerUse.UsePrayerDurationModifier">
@@ -325,9 +315,24 @@
             A custom quest item
             </summary>
         </member>
+        <member name="P:ModdingAPI.Items.ModQuestItem.AddInventorySlot">
+            <summary>
+            Quest items can not have extra slots added to the inventory screen
+            </summary>
+        </member>
+        <member name="P:ModdingAPI.Items.ModQuestItem.AddToPercentCompletion">
+            <summary>
+            Quest items can not add to the percent completion
+            </summary>
+        </member>
         <member name="T:ModdingAPI.Items.ModCollectible">
             <summary>
             A custom collectible
+            </summary>
+        </member>
+        <member name="P:ModdingAPI.Items.ModCollectible.Lore">
+            <summary>
+            Collectibles can not have lore
             </summary>
         </member>
         <member name="T:ModdingAPI.Mod">
@@ -418,7 +423,7 @@
             <summary>
             Registers a custom item to be loaded into the game
             </summary>
-            <param name="item"></param>
+            <param name="item">The new item to be added</param>
         </member>
         <member name="M:ModdingAPI.Mod.IsModLoaded(System.String)">
             <summary>
