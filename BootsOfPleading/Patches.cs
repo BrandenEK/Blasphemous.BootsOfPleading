@@ -3,11 +3,9 @@ using Gameplay.GameControllers.Entities;
 using Gameplay.GameControllers.Penitent;
 using Gameplay.UI;
 using Framework.Managers;
-using Framework.Dialog;
 using Framework.Inventory;
-using UnityEngine;
 using Tools.Playmaker2.Action;
-using System.Collections.Generic;
+using UnityEngine;
 
 namespace BootsOfPleading
 {
@@ -21,6 +19,7 @@ namespace BootsOfPleading
         }
     }
 
+    // Only set this if actually dead
     [HarmonyPatch(typeof(CheckTrap), "DeathBySpike", MethodType.Setter)]
     public class SpikeDamageFlag_Patch
     {
@@ -30,6 +29,7 @@ namespace BootsOfPleading
         }
     }
 
+    // Only launch event if actually dead
     [HarmonyPatch(typeof(EventManager), "LaunchEvent")]
     public class EventManager_Patch
     {
@@ -39,6 +39,7 @@ namespace BootsOfPleading
         }
     }
 
+    // Replace default trap checker with a longer one that extends into the spikes
     [HarmonyPatch(typeof(Penitent), "OnAwake")]
     public class Penitent_Patch
     {
@@ -56,35 +57,19 @@ namespace BootsOfPleading
         }
     }
 
+    // Give the boots when finishing a certain dialog
     [HarmonyPatch(typeof(DialogStart), "DialogEnded")]
     public class DialogStart_Patch
     {
         public static void Prefix(string id)
         {
-            if (id != "DLG_0312") return;
+            if (id != "DLG_0207") return;
 
             Relic boots = Core.InventoryManager.GetRelic("RE401");
             if (boots == null) return;
 
-            Core.InventoryManager.AddRelic(boots);
+            Core.InventoryManager.AddBaseObjectOrTears(boots);
             UIController.instance.ShowObjectPopUp(UIController.PopupItemAction.GetObejct, boots.caption, boots.picture, InventoryManager.ItemType.Relic, 3f, true);
         }
     }
-
-    //[HarmonyPatch(typeof(DialogManager), "Start")]
-    //public class DialogManagerStart_Patch
-    //{
-    //    public static void Postfix(Dictionary<string, DialogObject> ___allDialogs)
-    //    {
-    //        DialogObject dialog = new DialogObject();
-    //        dialog.dialogType = DialogObject.DialogType.GiveObject;
-    //        dialog.itemType = InventoryManager.ItemType.Relic;
-    //        dialog.item = "RE401";
-    //        dialog.dialogLines = new List<string>()
-    //        {
-    //            "It's dangerous to go alone Penitent One, take this."
-    //        };
-    //        ___allDialogs.Add("DLG_MOD_BOOTS", dialog);
-    //    }
-    //}
 }

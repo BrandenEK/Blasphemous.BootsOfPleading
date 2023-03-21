@@ -9,7 +9,6 @@ namespace BootsOfPleading
     {
         public SpikeProtection(string modId, string modName, string modVersion) : base(modId, modName, modVersion) { }
 
-        public enum ProtectionStatus { IFrames, Protected }
         private const float PROTECTION_TIME = 2f;
 
         private bool m_ProtectFromSpikes;
@@ -24,13 +23,14 @@ namespace BootsOfPleading
         }
 
         public bool DeadForReal { get; private set; }
+        private bool UsingIFrames { get; set; }
+        private bool CurrentlyInSpikes { get; set; }
 
         private bool TientoActive
         {
             get { return Core.InventoryManager.IsPrayerEquipped("PR11") && Core.Logic.Penitent.PrayerCast.Casting; }
         }
 
-        public ProtectionStatus Protection { get; private set; }
         private float currentProtectionTime;
 
         protected override void Initialize()
@@ -42,60 +42,63 @@ namespace BootsOfPleading
         protected override void LevelLoaded(string oldLevel, string newLevel)
         {
             DeadForReal = false;
+            CurrentlyInSpikes = false;
         }
 
         protected override void Update()
         {
-            if (Protection == ProtectionStatus.IFrames)
+            if (UsingIFrames)
             {
                 currentProtectionTime -= Time.deltaTime;
                 if (currentProtectionTime <= 0)
                 {
-                    Protection = ProtectionStatus.Protected;
+                    UsingIFrames = false;
                 }
             }
         }
 
         public bool InSpikes()
         {
-            if (!ProtectFromSpikes || TientoActive)
+            float currentHealth = Core.Logic.Penitent.Stats.Life.Current;
+
+            // If using the iframes, never get killed
+            if (UsingIFrames)
+            {
+                return false;
+            }
+
+            // If the boots aren't equipped, or you are using tiento, or you have no health, or you were already in spikes, instakill
+            if (!ProtectFromSpikes || TientoActive || currentHealth <= 1.2f || CurrentlyInSpikes)
             {
                 DeadForReal = true;
                 return true;
             }
 
-            if (Protection == ProtectionStatus.Protected)
+            // This means this is the first time touching spikes
+            Log("Preventing spike death!");
+            UsingIFrames = true;
+            CurrentlyInSpikes = true;
+            currentProtectionTime = PROTECTION_TIME;
+
+            Hit spikeHit = new Hit()
             {
-                float currentHealth = Core.Logic.Penitent.Stats.Life.Current;
-                if (currentHealth <= 1)
-                {
-                    DeadForReal = true;
-                    return true;
-                }
-
-                Log("Preventing spike death!");
-                Protection = ProtectionStatus.IFrames;
-                currentProtectionTime = PROTECTION_TIME;
-
-                Hit spikeHit = new Hit()
-                {
-                    DamageAmount = currentHealth - 1,
-                    DamageType = DamageArea.DamageType.Normal,
-                    DamageElement = DamageArea.DamageElement.Contact,
-                    AttackingEntity = Core.Logic.Penitent.gameObject,
-                    Unblockable = true,
-                    Unparriable = true,
-                    Unnavoidable = true
-                };
-                Core.Logic.Penitent.Damage(spikeHit);
-                Core.Audio.PlaySfxOnCatalog("PenitentDeathBySpike");
-            }
+                DamageAmount = currentHealth - 1,
+                DamageType = DamageArea.DamageType.Normal,
+                DamageElement = DamageArea.DamageElement.Contact,
+                AttackingEntity = Core.Logic.Penitent.gameObject,
+                Unblockable = true,
+                Unparriable = true,
+                Unnavoidable = true
+            };
+            Core.Logic.Penitent.Damage(spikeHit);
+            Core.Audio.PlaySfxOnCatalog("PenitentDeathBySpike");
             return false;
         }
 
         public void LeftSpikes()
         {
-            Protection = ProtectionStatus.Protected;
+            CurrentlyInSpikes = false;
+            UsingIFrames = false;
         }
     }
 }
