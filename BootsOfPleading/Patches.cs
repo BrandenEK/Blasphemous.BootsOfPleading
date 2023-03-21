@@ -11,19 +11,13 @@ using System.Collections.Generic;
 
 namespace BootsOfPleading
 {
+    // If in Iframes or first hit with enough health, skip the rest of spike damage
     [HarmonyPatch(typeof(CheckTrap), "SpikeTrapDamage")]
     public class SpikeDamage_Patch
     {
         public static bool Prefix()
         {
-            if (Main.SpikeProtection.Protection == SpikeProtection.ProtectionStatus.None)
-            {
-                return true;
-            }
-            else
-            {
-                return Main.SpikeProtection.InSpikes();
-            }
+            return Main.SpikeProtection.InSpikes();
         }
     }
 
@@ -32,7 +26,7 @@ namespace BootsOfPleading
     {
         public static bool Prefix()
         {
-            return Main.SpikeProtection.Protection == SpikeProtection.ProtectionStatus.None;
+            return Main.SpikeProtection.DeadForReal;
         }
     }
 
@@ -41,7 +35,7 @@ namespace BootsOfPleading
     {
         public static bool Prefix(string id)
         {
-            return id != "PENITENT_KILLED" || Main.SpikeProtection.Protection == SpikeProtection.ProtectionStatus.None;
+            return id != "PENITENT_KILLED" || Main.SpikeProtection.DeadForReal;
         }
     }
 
