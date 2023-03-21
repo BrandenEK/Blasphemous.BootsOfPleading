@@ -19,7 +19,7 @@ namespace BootsOfPleading
 
         protected override bool AddInventorySlot => true;
 
-        protected override bool CarryOnStart => true;
+        protected override bool CarryOnStart => false;
 
         protected override void LoadImages(out Sprite picture)
         {
