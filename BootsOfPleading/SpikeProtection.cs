@@ -67,8 +67,8 @@ namespace BootsOfPleading
                 return false;
             }
 
-            // If the boots aren't equipped, or you are using tiento, or you have no health, or you were already in spikes, instakill
-            if (!ProtectFromSpikes || TientoActive || currentHealth <= 1.2f || CurrentlyInSpikes)
+            // If the boots aren't equipped, or you have no health, or you were already in spikes, instakill
+            if (!ProtectFromSpikes || currentHealth <= 1.2f || CurrentlyInSpikes)
             {
                 DeadForReal = true;
                 return true;
@@ -90,6 +90,11 @@ namespace BootsOfPleading
                 Unparriable = true,
                 Unnavoidable = true
             };
+            if (TientoActive)
+            {
+                Core.Logic.Penitent.Stats.Life.Current = 1;
+            }
+
             Core.Logic.Penitent.Damage(spikeHit);
             Core.Audio.PlaySfxOnCatalog("PenitentDeathBySpike");
             return false;
