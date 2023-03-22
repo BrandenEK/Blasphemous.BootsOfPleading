@@ -9,7 +9,7 @@ namespace BootsOfPleading
     {
         public const string MOD_ID = "com.author.blasphemous.boots-of-pleading";
         public const string MOD_NAME = "Boots of Pleading";
-        public const string MOD_VERSION = "1.0.0";
+        public const string MOD_VERSION = "1.0.1";
 
         public static SpikeProtection SpikeProtection { get; private set; }
 
