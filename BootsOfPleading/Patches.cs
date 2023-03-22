@@ -65,11 +65,11 @@ namespace BootsOfPleading
         {
             if (id != "DLG_0207") return;
 
-            Relic boots = Core.InventoryManager.GetRelic("RE401");
-            if (boots == null) return;
+            BaseInventoryObject obj = Core.InventoryManager.GetBaseObject("RE401", InventoryManager.ItemType.Relic);
+            if (obj == null) return;
 
-            Core.InventoryManager.AddBaseObjectOrTears(boots);
-            UIController.instance.ShowObjectPopUp(UIController.PopupItemAction.GetObejct, boots.caption, boots.picture, InventoryManager.ItemType.Relic, 3f, true);
+            obj = Core.InventoryManager.AddBaseObjectOrTears(obj);
+            UIController.instance.ShowObjectPopUp(UIController.PopupItemAction.GetObejct, obj.caption, obj.picture, InventoryManager.ItemType.Relic, 3f, true);
         }
     }
 }
