@@ -10,7 +10,7 @@
 
 ## Relic Details
 
-- A new relic, the "Boots of Pleading", will be added to your inventory when starting a new game
+- A new relic, the "Boots of Pleading", can be obtained during Redento's quest
 - When this item is equipped, falling into spikes will not instantly kill you, but will leave you at 1 hp
 - After falling in, you will have a few seconds to get out of the spikes before being killed for real
 - All credit for this mod goes to the original creator Kein.  This is simply an updated version of their mod
