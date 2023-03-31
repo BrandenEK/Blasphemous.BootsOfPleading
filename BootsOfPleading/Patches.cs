@@ -1,11 +1,10 @@
 ﻿using HarmonyLib;
 using Gameplay.GameControllers.Entities;
 using Gameplay.GameControllers.Penitent;
-using Gameplay.UI;
 using Framework.Managers;
-using Framework.Inventory;
 using Tools.Playmaker2.Action;
 using UnityEngine;
+using ModdingAPI;
 
 namespace BootsOfPleading
 {
@@ -63,13 +62,10 @@ namespace BootsOfPleading
     {
         public static void Prefix(string id)
         {
-            if (id != "DLG_0207") return;
-
-            BaseInventoryObject obj = Core.InventoryManager.GetBaseObject("RE401", InventoryManager.ItemType.Relic);
-            if (obj == null) return;
-
-            obj = Core.InventoryManager.AddBaseObjectOrTears(obj);
-            UIController.instance.ShowObjectPopUp(UIController.PopupItemAction.GetObejct, obj.caption, obj.picture, InventoryManager.ItemType.Relic, 3f, true);
+            if (id == "DLG_0207")
+            {
+                ItemModder.AddAndDisplayItem("RE401");
+            }
         }
     }
 }
