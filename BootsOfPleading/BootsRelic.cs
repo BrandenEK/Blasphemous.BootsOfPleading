@@ -23,7 +23,7 @@ namespace BootsOfPleading
 
         protected override void LoadImages(out Sprite picture)
         {
-            picture = Main.SpikeProtection.FileUtil.loadDataImages("boots.png", 32, 32, 32, 0, true, out Sprite[] images) ? images[0] : null;
+            picture = Main.SpikeProtection.FileUtil.loadDataImages("boots.png", 30, 30, 32, 0, true, out Sprite[] images) ? images[0] : null;
         }
     }
 }
