@@ -1,7 +1,7 @@
-﻿using ModdingAPI;
-using UnityEngine;
-using Framework.Managers;
+﻿using Framework.Managers;
 using Gameplay.GameControllers.Entities;
+using ModdingAPI;
+using UnityEngine;
 
 namespace BootsOfPleading
 {
@@ -14,7 +14,7 @@ namespace BootsOfPleading
         private bool m_ProtectFromSpikes;
         public bool ProtectFromSpikes
         {
-            get { return m_ProtectFromSpikes; }
+            get => m_ProtectFromSpikes;
             set
             {
                 m_ProtectFromSpikes = value;
@@ -26,10 +26,7 @@ namespace BootsOfPleading
         private bool UsingIFrames { get; set; }
         private bool CurrentlyInSpikes { get; set; }
 
-        private bool TientoActive
-        {
-            get { return Core.InventoryManager.IsPrayerEquipped("PR11") && Core.Logic.Penitent.PrayerCast.Casting; }
-        }
+        private bool TientoActive => Core.InventoryManager.IsPrayerEquipped("PR11") && Core.Logic.Penitent.PrayerCast.Casting;
 
         private float currentProtectionTime;
 
@@ -80,7 +77,7 @@ namespace BootsOfPleading
             CurrentlyInSpikes = true;
             currentProtectionTime = PROTECTION_TIME;
 
-            Hit spikeHit = new Hit()
+            Hit spikeHit = new()
             {
                 DamageAmount = currentHealth - 1,
                 DamageType = DamageArea.DamageType.Normal,
