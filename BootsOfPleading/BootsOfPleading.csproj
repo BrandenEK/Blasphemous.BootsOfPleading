@@ -6,7 +6,7 @@
     <BepInExPluginGuid>com.damocles.blasphemous.boots-of-pleading</BepInExPluginGuid>
     <BepInExPluginName>Boots of Pleading</BepInExPluginName>
     <Description>Adds a new relic that allows you to survive falling in spikes</Description>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
