@@ -49,8 +49,8 @@ namespace BootsOfPleading
             Object.Destroy(trapChecker);
 
             BoxCollider2D collider = holder.GetComponent<BoxCollider2D>();
-            collider.size = new Vector2(collider.size.x, collider.size.y + 0.6f);
-            collider.offset = new Vector2(collider.offset.x, collider.offset.y + 0.3f);
+            collider.size = new Vector2(collider.size.x, collider.size.y + 0.4f);
+            collider.offset = new Vector2(collider.offset.x, collider.offset.y + 0.2f);
 
             holder.AddComponent<CheckTrapDerived>();
         }
