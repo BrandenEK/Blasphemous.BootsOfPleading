@@ -8,6 +8,11 @@ itmnam: Botas de la Súplica
 itmdes: Unas viejas botas de acero herrumbrosas y manchadas. Este Milagro de origen poco conocido protege a Penitente de la inevitable muerte por pinchos.
 itmlor: El Juez Supremo Marcus era famoso por su mal genio. Cuando Cristóbal el peregrino osó entrar en sus aposentos con los pies descalzos y sucios el castigo fue inmediato. Cada día, el desafortunado Cristóbal tenía que recoger agua para los monjes de una iglesia cercana. Todos los días tenía que llevar unas botas de acero repletas de clavos afilados por dentro, y por las tardes vaciaba las botas llenas de sangre. Al terminar cada semana acudía al ujier del juez y le imploraba misericordia. Mas ignoraba por completo que el Juez se olvidó de su existencia al día siguiente. Y así, durante siete años estuvo recogiendo agua, secando las botas y suplicando entre lágrimas. Hasta que un día las botas estaban secas cuando se las quitó. Ese día las súplicas de San Cristóbal fueron oídas.
 
+lang: de
+itmnam: Stiefel des Plädoyers
+itmdes: Alte Stahlstiefel, bedeckt mit Rost und dunklen Flecken. Dieses Wunder weniger bekannten Ursprungs schützt den Büßer vor dem unvermeidlichen Tod durch Stacheln.
+itmlor: Der hohe Richter Marcus war für sein Temperament bekannt. Als der Pilger Cristobal es wagte, seine Gemächer mit nackten und schmutzigen Füßen zu betreten, war die Strafe schnell vollzogen. Jeden Tag musste der arme Cristobal Wasser für die Mönche der nahen Kirche holen. Jeden Tag musste er Stahlstiefel tragen, die innen mit scharfen Stacheln versehen waren. Jeden Mittag musste er die Stiefel von seinem Blut befreien. Am Ende jeder Woche kam er zum Richter und bat ihn um Gnade. Aber der Pilger Cristobal wusste nicht, dass der Richter seine Existenz am nächsten Tag vergaß. Und so holte er sieben Jahre lang das Wasser, trocknete die Stiefel und flehte unter Tränen. Bis eines Tages die Stiefel, die er ausgezogen hatte, trocken waren. An diesem Tag wurden die Bitten von St. Cristobal erhört.
+
 lang: zh
 itmnam: 恳求之靴
 itmdes: 被锈迹和污点覆盖的老旧铁靴。其上一种罕为人知的奇迹能保护忏悔者不蒙受尖刺带来的命定之死
