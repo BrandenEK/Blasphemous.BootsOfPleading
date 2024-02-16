@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Blasphemous.BootsOfPleading;
 
-public class BootsRelic : ModRelic
+internal class BootsRelic : ModRelic
 {
     protected override string Id => "RE401";
 

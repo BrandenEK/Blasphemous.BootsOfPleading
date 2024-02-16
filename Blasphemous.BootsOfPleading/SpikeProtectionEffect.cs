@@ -2,7 +2,7 @@
 
 namespace Blasphemous.BootsOfPleading;
 
-public class SpikeProtectionEffect : ModItemEffectOnEquip
+internal class SpikeProtectionEffect : ModItemEffectOnEquip
 {
     protected override void ApplyEffect()
     {

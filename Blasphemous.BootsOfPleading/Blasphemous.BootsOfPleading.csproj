@@ -8,24 +8,21 @@
     <Product>Boots of Pleading</Product>
     <Authors>Damocles</Authors>
     <Company>Damocles</Company>
-    <Description>A mod for Blasphemous 1</Description>
-    <Version>0.1.0</Version>
+    <Description>Adds a new relic that protects you from spike damage</Description>
+    <Version>1.0.4</Version>
 
     <TargetName>BootsOfPleading</TargetName>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <RepositoryUrl>https://github.com/Example</RepositoryUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>bin\Release\$(TargetName).xml</DocumentationFile>
+    <RepositoryUrl>https://github.com/BrandenEK/Blasphemous.BootsOfPleading</RepositoryUrl>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blasphemous.Framework.Items" Version="0.1.0" />
     <PackageReference Include="Blasphemous.ModdingAPI" Version="2.1.0" />
     <PackageReference Include="Blasphemous.ModdingReferences" Version="4.0.67" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ItemFramework">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Blasphemous\Modding\plugins\ItemFramework.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <Target Name="Development" AfterTargets="PostBuildEvent">
