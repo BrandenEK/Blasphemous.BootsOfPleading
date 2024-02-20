@@ -1,10 +1,6 @@
 # Blasphemous Boots of Pleading
 
-<div>
-  <img src="https://img.shields.io/github/v/release/BrandenEK/Blasphemous.BootsOfPleading?style=for-the-badge">
-  <img src="https://img.shields.io/github/last-commit/BrandenEK/Blasphemous.BootsOfPleading?color=important&style=for-the-badge">
-  <img src="https://img.shields.io/github/downloads/BrandenEK/Blasphemous.BootsOfPleading/total?color=success&style=for-the-badge">
-</div>
+<img src="https://img.shields.io/github/downloads/BrandenEK/Blasphemous.BootsOfPleading/total?color=6495ED&style=for-the-badge">
 
 ---
 
