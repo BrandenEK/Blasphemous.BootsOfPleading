@@ -102,7 +102,7 @@ public class SpikeProtection : BlasMod
         }
 
         // This means this is the first time touching spikes
-        Log("Preventing spike death!");
+        ModLog.Info("Preventing spike death!");
         UsingIFrames = true;
         CurrentlyInSpikes = true;
         currentProtectionTime = PROTECTION_TIME;

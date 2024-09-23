@@ -1,4 +1,4 @@
-﻿using Blasphemous.ModdingAPI;
+﻿using Blasphemous.ModdingAPI.Helpers;
 using Framework.Managers;
 using Gameplay.GameControllers.Entities;
 using Gameplay.GameControllers.Penitent;
@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Blasphemous.BootsOfPleading;
 
 // If in Iframes or first hit with enough health, skip the rest of spike damage
-[HarmonyPatch(typeof(CheckTrap), "SpikeTrapDamage")]
+[HarmonyPatch(typeof(CheckTrap), nameof(CheckTrap.SpikeTrapDamage))]
 class SpikeDamage_Patch
 {
     public static bool Prefix()
@@ -19,7 +19,7 @@ class SpikeDamage_Patch
 }
 
 // Only set this if actually dead
-[HarmonyPatch(typeof(CheckTrap), "DeathBySpike", MethodType.Setter)]
+[HarmonyPatch(typeof(CheckTrap), nameof(CheckTrap.DeathBySpike), MethodType.Setter)]
 class SpikeDamageFlag_Patch
 {
     public static bool Prefix()
@@ -29,7 +29,7 @@ class SpikeDamageFlag_Patch
 }
 
 // Only launch event if actually dead
-[HarmonyPatch(typeof(EventManager), "LaunchEvent")]
+[HarmonyPatch(typeof(EventManager), nameof(EventManager.LaunchEvent))]
 class EventManager_Patch
 {
     public static bool Prefix(string id)
@@ -39,7 +39,7 @@ class EventManager_Patch
 }
 
 // Replace default trap checker with a longer one that extends into the spikes
-[HarmonyPatch(typeof(Penitent), "OnAwake")]
+[HarmonyPatch(typeof(Penitent), nameof(Penitent.OnAwake))]
 class Penitent_Patch
 {
     public static void Prefix(Penitent __instance)
@@ -57,14 +57,14 @@ class Penitent_Patch
 }
 
 // Give the boots when finishing a certain dialog
-[HarmonyPatch(typeof(DialogStart), "DialogEnded")]
+[HarmonyPatch(typeof(DialogStart), nameof(DialogStart.DialogEnded))]
 class DialogStart_Patch
 {
     public static void Prefix(string id)
     {
         if (id == "DLG_0207")
         {
-            ItemModder.AddAndDisplayItem("RE401");
+            ItemHelper.AddAndDisplayItem("RE401");
         }
     }
 }
