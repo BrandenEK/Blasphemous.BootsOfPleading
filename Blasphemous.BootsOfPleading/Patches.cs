@@ -1,4 +1,4 @@
-﻿using Blasphemous.ModdingAPI;
+﻿using Blasphemous.ModdingAPI.Helpers;
 using Framework.Managers;
 using Gameplay.GameControllers.Entities;
 using Gameplay.GameControllers.Penitent;
@@ -64,7 +64,7 @@ class DialogStart_Patch
     {
         if (id == "DLG_0207")
         {
-            ItemModder.AddAndDisplayItem("RE401");
+            ItemHelper.AddAndDisplayItem("RE401");
         }
     }
 }
