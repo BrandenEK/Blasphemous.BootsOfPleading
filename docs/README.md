@@ -21,5 +21,7 @@
 - After falling in, you will have a few seconds to get out of the spikes before being killed for real
 
 ## Installation
-This mod is available for download through the [Blasphemous Mod Installer](https://github.com/BrandenEK/Blasphemous.Modding.Installer)
-- Required dependencies: Modding API, Item Framework
+This mod is available for download through the [Blasphemous Mod Installer](https://github.com/BrandenEK/Blasphemous.Modding.Installer) <br>
+Required dependencies:
+- [Modding API](https://github.com/BrandenEK/Blasphemous.ModdingAPI)
+- [Item Framework](https://github.com/BrandenEK/Blasphemous.Framework.Items)
