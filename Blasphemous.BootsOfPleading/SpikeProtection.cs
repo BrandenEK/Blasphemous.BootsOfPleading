@@ -83,7 +83,6 @@ public class SpikeProtection : BlasMod
     /// <summary>
     /// While in spikes, determine if should take damage
     /// </summary>
-    /// <returns></returns>
     public bool InSpikes()
     {
         float currentHealth = Core.Logic.Penitent.Stats.Life.Current;
